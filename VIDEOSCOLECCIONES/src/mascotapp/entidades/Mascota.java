@@ -42,4 +42,11 @@ public class Mascota {
     public void setRaza(String raza) {
         this.raza = raza;
     }
+
+    @Override
+    public String toString() {
+        return "Mascota{" + "nombre=" + nombre + ", apodo=" + apodo + ", raza=" + raza + '}';
+    }
+    
+    
 }

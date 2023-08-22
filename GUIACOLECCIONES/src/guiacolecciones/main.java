@@ -4,6 +4,7 @@ package guiacolecciones;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.TreeSet;
 
 /**
@@ -85,6 +86,32 @@ public class main {
         
         alumnos.remove(dni2);
         System.out.println("Actualización mapa: " + alumnos.toString());
+        
+        /**
+         * Ejercicio 04: Corrige el siguiente codigo.
+         */
+        System.out.println("\nEjecutando Ejercicio 04: Correccion de errores.\n");
+        HashMap<Integer,String> personas2 = new HashMap<>();
+        String n1 = "Albus";
+        String n2 = "Severus";
+        personas.put(1, n1);
+        personas.put(2, n2);
+        System.out.println("Resultado: " + personas.toString());
+        
+        /**
+         * Ejercicio 05: Corrige el siguiente codigo.
+         */
+        System.out.println("\nEjecutando Ejercicio 05: Correccion de errores.\n");
+        ArrayList<String> bebidas = new ArrayList<>();
+        bebidas.add("cafe");
+        bebidas.add("te");
+        Iterator<String> it = bebidas.iterator();
+        while(it.hasNext()){
+            if (it.next().equals("cafe")){
+                it.remove();
+            }
+        }
+        System.out.println("Resultado: " + bebidas.toString());
+        
     }
-    
 }
