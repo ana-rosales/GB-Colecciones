@@ -3,10 +3,18 @@ package mascotapp.main;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
+import mascotapp.entidades.Mascota;
 import mascotapp.servicios.ServicioMascota;
+import mascotapp.utilidades.Comparadores;
 
 /**
  *
@@ -210,34 +218,116 @@ public class MascotAPP {
 //         * - WAIT
 //         */
 
-        //VIDEO 05: RECORRER UNA LISTA
+//        //VIDEO 05: RECORRER UNA LISTA
+//        
+//        ArrayList<String> personas = new ArrayList<>(Arrays.asList("Michel","Yahir feo","Viktor","Omar","Vania","Michelle","Adri","Pame","Vanessa","Jimena"));
+//        
+//        System.out.println("\nRECORRIENDO CON FOR ELEMENT\n");
+//        for (String persona : personas) {
+//            System.out.println(persona);
+//        }
+//        
+//        System.out.println("\nRECORRIENDO CON FOR I\n");
+//        for (int i = 0; i < personas.size(); i++) {
+//            System.out.println(personas.get(i));
+//        }
+//        
+//        System.out.println("\nRECORRIENDO CON FOREACH\n");
+//        personas.forEach(e -> System.out.println(e));
+//        
+//        System.out.println("\nRECORRIENDO CON ITERATOR\n");
+//        Iterator<String> it = personas.iterator();
+//        
+//        while(it.hasNext()){
+//            System.out.println(it.next());
+//            if(it.next().equalsIgnoreCase("yahir feo")){
+//                it.remove();
+//                System.out.println("\nELIMINANDO CON ITERATOR\n");
+//            }
+//        }        
+//        System.out.println(personas.toString());
         
-        ArrayList<String> personas = new ArrayList<>(Arrays.asList("Michel","Yahir feo","Viktor","Omar","Vania","Michelle","Adri","Pame","Vanessa","Jimena"));
+//        //VIDEO 06
+//        /**
+//         * Matriz de listas.
+//         */
+//        ArrayList<ArrayList<String>> matriz = new ArrayList<>();
+//        
+//        ArrayList<Mascota> mascotas = new ArrayList<>();
+//        
+//        mascotas.add(new Mascota("Jack", "Jack es perro", "cocker"));
+//        mascotas.add(new Mascota("Mingo", "mingoninio", "callejero"));
+//        mascotas.add(new Mascota("Jack", "Jack es perro", "cocker"));
+//        mascotas.add(new Mascota("Mingo", "mingoninio", "callejero"));
+//        mascotas.add(new Mascota("Jack", "Jack es perro", "cocker"));
+//        mascotas.add(new Mascota("Mingo", "mingoninio", "callejero"));
+//        mascotas.add(new Mascota("Jack", "Jack es perro", "cocker"));
+//        mascotas.add(new Mascota("Mingo", "mingoninio", "callejero"));
+//        
+//        Collections.sort(mascotas, Comparadores.ordenarPorNombreDesc);
+//        
+//        /**
+//         * Desordenar coleccion.
+//         */
+//        Collections.shuffle(mascotas);
+//        
+//        for (Mascota mascota : mascotas) {
+//            System.out.println(mascota);
+//        }
+
+//            //VIDEO 07: CONJUNTOS.
+//            Set<Mascota> mascotas = new TreeSet<>();
+//
+//            mascotas.add(new Mascota("Fer", "Chiquito","Perro"));
+//            mascotas.add(new Mascota("Fer", "Chiquito","Perro"));
+//            mascotas.add(new Mascota("Fer", "Chiquito","Perro"));
+//            mascotas.add(new Mascota("Fer", "Chiquito","Perro"));
+//            mascotas.add(new Mascota("Fer", "Chiquito","Perro"));
+//            mascotas.add(new Mascota("Fer", "Chiquito","Perro"));
+//            mascotas.add(new Mascota("Pepa", "Lola", "Gato"));
+//            mascotas.add(new Mascota("Pepa", "Lola", "Gato"));
+//            mascotas.add(new Mascota("Pepa", "Lola", "Gato"));
+//            mascotas.add(new Mascota("Pepa", "Lola", "Gato"));
+//            mascotas.add(new Mascota("Pepa", "Lola", "Gato"));
+//            mascotas.add(new Mascota("Pepa", "Lola", "Gato"));
+//            mascotas.add(new Mascota("ZZZ", "ZZZ", "ZZZ"));
+//
+//            for (Mascota mascota : mascotas) {
+//                System.out.println(mascota);
+//            }
+
+        //VIDEO 08: MAPAS
+        System.out.println("\nEjemplo con HashMap de String de llave y valor.\n");
+        HashMap<String,String> nombres = new HashMap<>();
         
-        System.out.println("\nRECORRIENDO CON FOR ELEMENT\n");
-        for (String persona : personas) {
-            System.out.println(persona);
+        nombres.put("1", "Chiquito");
+        nombres.put(String.valueOf(Long.MAX_VALUE), "Lola");
+        //no se puede poner un long como llave
+        
+        for (Map.Entry<String, String> entry : nombres.entrySet()) {
+            String key = entry.getKey();
+            String value = entry.getValue();
+            
+            System.out.println("key " + key + " value " + value);
         }
         
-        System.out.println("\nRECORRIENDO CON FOR I\n");
-        for (int i = 0; i < personas.size(); i++) {
-            System.out.println(personas.get(i));
+        System.out.println("\nEjemplo con HashMap de String de llave y valor.\n");
+        HashMap<String,Mascota> mascotas = new HashMap<>();
+        
+        mascotas.put("1", new Mascota("Fer", "Chiquito", "Perro"));
+        mascotas.put("2", new Mascota("Pepa", "Lola", "Gato"));
+        
+        //eliminar algo de un mapa
+        //por par = mascotas.remove("1", new Mascota("Fer", "Chiquito", "Perro"));
+        //por key = mascotas.remove("1");
+        
+        for (Map.Entry<String, Mascota> entry : mascotas.entrySet()) {
+            String key = entry.getKey();
+            Mascota value = entry.getValue();
+            
+            System.out.println("key " + key + " value " + value);
         }
         
-        System.out.println("\nRECORRIENDO CON FOREACH\n");
-        personas.forEach(e -> System.out.println(e));
-        
-        System.out.println("\nRECORRIENDO CON ITERATOR\n");
-        Iterator<String> it = personas.iterator();
-        
-        while(it.hasNext()){
-            System.out.println(it.next());
-            if(it.next().equalsIgnoreCase("yahir feo")){
-                it.remove();
-                System.out.println("\nELIMINANDO CON ITERATOR\n");
-            }
-        }        
-        System.out.println(personas.toString());
     }
     
 }

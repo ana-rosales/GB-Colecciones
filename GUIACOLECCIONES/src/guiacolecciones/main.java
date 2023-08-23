@@ -1,7 +1,9 @@
 
 package guiacolecciones;
 
+import guiacolecciones.entidades.Libro;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -113,5 +115,21 @@ public class main {
         }
         System.out.println("Resultado: " + bebidas.toString());
         
+        /**
+         * Ejercicio 06: ¡Es tu turno! Crea una lista de Libros y muestra el título de cada uno con un bucle.
+         */
+        System.out.println("\nEjecutando Ejercicio 06: Lista de objetos propios.\n");
+        ArrayList<Libro> libros = new ArrayList<>();
+        Iterator<Libro> itLib = libros.iterator();
+        Libro lib1 = new Libro("Susane Collins", 300, "Antes de ti");
+        Libro lib2 = new Libro("J. K. Rowlin", 600, "Harry Potter");
+        Libro lib3 = new Libro("Gabriel Garcia Marquez", 500, "100 anios de soledad");
+        libros.addAll(Arrays.asList(lib1, lib2, lib3));
+        
+        for (Libro libro : libros) {
+            System.out.println(" - " + libro);
+        }
+        
     }
 }
+ 
